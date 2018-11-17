@@ -16,7 +16,7 @@ if(isset($_POST['Submit'])){
 
 	// 获取用户资料
     $studentid = $_POST['studentid'];
-    $sql = "SELECT password FROM student WHERE studentid = \"".$studentid."\"";
+    $sql = "SELECT * FROM student WHERE studentid = \"".$_POST['studentid']."\" AND password != \"NULL\"";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
     	$user_data = $result->fetch_assoc();
@@ -28,11 +28,11 @@ if(isset($_POST['Submit'])){
              echo "<script>alert('登录成功！');</script>";
 		     echo "<script>location.href='index.php';</script>";
 		     exit();
-	}else{
-		echo "<script>alert('账号或者密码错误！');</script>";
-		echo "<script>location.href='login.php';</script>";
-		exit();
-	}
+		 }else{
+		 	echo "<script>alert('账号或者密码错误！');</script>";
+		 	echo "<script>location.href='login.php';</script>";
+		 	exit();
+		 }
     }else{
         echo "<script>alert('学号出错,请先注册！');</script>";
 		echo "<script>location.href='login.php';</script>";	
