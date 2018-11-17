@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>概览</title> 
+</head>
+
+<body onload="main">
+
+<p>
+	<select>
+		<option value ="name">姓名</option>
+		<option value ="sno">学号</option>
+		<option value="tel">电话</option>
+		<option value="wx">微信</option>
+		<option value ="email">邮箱</option>
+		<option value ="qq">QQ</option>
+	</select>
+
+	<input type="text" id="selectValue">
+
+	<button type="button" id="select" onclick="select()">查询</button>
+
+</p>
+
+<table border="1">
+	<tr>
+		<th>姓名</th>
+		<th>学号</th>
+		<th>操作</th>
+	</tr>
+	<tr>
+	  <td>xms</td>
+	  <td>555</td>
+	  <td>详情</td>
+	</tr>
+</table>
+
+<p>
+<button type="button" id="insert" onclick="insert()" >插入</button>
+</p>
+
+<script src="./overAll.js"></script>
+
+</body>
+
+</html>
