@@ -61,7 +61,7 @@ if(isset($_POST['Submit'])){
 	 }
 
 
-	 $sql = "SELECT id FROM student WHERE studentid = \"".$_POST['studentid']."\"";
+	 $sql = "SELECT id FROM student WHERE studentid = \"".$_POST['studentid']."\" AND password != \"NULL\"";
      $result = $conn->query($sql);
      if ($result->num_rows > 0) {
         echo "<script>alert('该学号已经注册过了！');</script>";
@@ -104,7 +104,7 @@ if(isset($_POST['Submit'])){
 	<div class="container_wrap">
 		<div class="header_top">
 		    <div class="col-sm-3 logo">
-		    <a href="index.php">圆桌</a>
+		    <a href="index.php">校友录</a>
 		    </div>
 			<div class="clearfix"> </div>
 	      </div>
@@ -133,15 +133,15 @@ if(isset($_POST['Submit'])){
 					 </div>
 					 <div>
 						<span>专业<label>*</label></span>
-						<input type="text" name='major' placeholder="请输入您的专业"> 
+						<input type="text" name='major' placeholder="请输入您的专业,例计算机"> 
 					 </div>
 					 <div>
 						<span>年级<label>*</label></span>
-						<input type="text" name='grade' placeholder="请输入您的年级"> 
+						<input type="text" name='grade' placeholder="请输入您的年级,例2016"> 
 					 </div>
 					 <div>
 						 <span>班级<label>*</label></span>
-						 <input type="text" name='class' placeholder="请输入您的班级"> 
+						 <input type="text" name='class' placeholder="请输入您的班级,例1"> 
 					 </div>
 					 <div class="clearfix"> </div>
 					   <a class="news-letter" href="#">
